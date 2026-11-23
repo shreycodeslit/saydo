@@ -21,7 +21,7 @@ export async function parseSmart(text: string, ctx: ParseContext, opts: { forceA
       signal: opts.signal,
     });
     const data = await res.json();
-    if (!res.ok) throw new Error(data?.error || `AI parser returned ${res.status}`);
+    if (!res.ok || data?.error) throw new Error(data?.error || `AI parser returned ${res.status}`);
     return { tasks: data.tasks as ParsedTask[], source: data.source as ParseSource, ms: Math.round(performance.now() - t0) };
   } catch (e) {
     // No network, quota used up or rate limited: keep the on-device result and say so

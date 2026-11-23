@@ -24,6 +24,6 @@ r = await post({ text: 'x y', now }); console.log('fallback', r.status, (await r
 mode = 'garbage';
 r = await post({ text: 'x y', now }); console.log('garbage', r.status, (await r.json()).error);
 mode = 'ok';
-r = await post({ text: 'a'.repeat(601) }); console.log('too long', r.status);
-r = await post({ text: '' }); console.log('empty', r.status);
-let last = 0; for (let i = 0; i < 22; i++) last = (await post({ text: 'hi there', now }, '9.9.9.9')).status; console.log('rate limit', last);
+r = await post({ text: 'a'.repeat(601) }); console.log('too long', (await r.json()).error);
+r = await post({ text: '' }); console.log('empty', (await r.json()).error);
+let last = ''; for (let i = 0; i < 22; i++) last = (await (await post({ text: 'hi there', now }, '9.9.9.9')).json()).error || ''; console.log('rate limit', last);

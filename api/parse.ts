@@ -1,13 +1,18 @@
 // POST /api/parse  { text, now?, timeZone? } → { tasks, source, ms, promptVersion }
 // The AI parser, used only when the on-device parser isn't confident.
-import { generateJson, json, rateLimited } from './_lib/ai';
+import { generateJson, json, rateLimited, respondLater } from './_lib/ai';
 import { PROMPT_VERSION, systemPrompt, toTasks } from './_lib/prompt';
 
 export const config = { runtime: 'edge' };
 
 const MAX_CHARS = 600;
 
-export default async function handler(req: Request): Promise<Response> {
+// Answers start streaming at once, so a slow free-tier model can't hit the Edge 25-second start limit
+export default function handler(req: Request): Response {
+  return respondLater(() => handle(req));
+}
+
+async function handle(req: Request): Promise<Response> {
   if (req.method !== 'POST') return json({ error: 'Use POST.' }, 405);
   if (rateLimited(req, 20, 10 * 60_000)) return json({ error: 'Too many requests from you just now. Try again in a few minutes.' }, 429);
 
