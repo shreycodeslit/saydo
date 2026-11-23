@@ -6,7 +6,6 @@ declare const process: { env: Record<string, string | undefined> };
 
 export type Provider = 'gemini' | 'groq';
 export interface AiResult<T> { data: T; provider: Provider; ms: number; skipped?: string[] }
-export let lastErrors: string[] = [];
 
 const GEMINI_MODEL = () => process.env.GEMINI_MODEL || 'gemini-flash-latest';
 const GROQ_MODEL = () => process.env.GROQ_MODEL || 'openai/gpt-oss-120b';
@@ -28,27 +27,41 @@ export function extractJson(text: string): unknown {
   throw new Error('The model did not return JSON');
 }
 
-async function gemini(system: string, user: string): Promise<string> {
-  const key = process.env.GEMINI_API_KEY;
-  if (!key) throw new Error('GEMINI_API_KEY is not set');
-  const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL()}:generateContent`, {
+export interface ImagePart { mime: string; data: string }
+
+const GEMINI_MODELS = () => [...new Set([GEMINI_MODEL(), 'gemini-flash-latest', 'gemini-flash-lite-latest', 'gemini-2.5-flash'])];
+
+async function geminiOnce(model: string, system: string, user: string, image?: ImagePart): Promise<{ status: number; text?: string; message?: string }> {
+  const key = process.env.GEMINI_API_KEY!;
+  const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'x-goog-api-key': key },
     body: JSON.stringify({
       systemInstruction: { parts: [{ text: system }] },
-      contents: [{ role: 'user', parts: [{ text: user }] }],
+      contents: [{ role: 'user', parts: [...(image ? [{ inline_data: { mime_type: image.mime, data: image.data } }] : []), { text: user }] }],
       generationConfig: { temperature: 0, responseMimeType: 'application/json' },
     }),
     signal: withTimeout(TIMEOUT_MS),
   });
   const body = await res.json().catch(() => ({})) as { candidates?: { content?: { parts?: { text?: string }[] } }[]; error?: { message?: string } };
-  if (!res.ok) throw new Error(`Gemini ${res.status}: ${body.error?.message || 'request failed'}`);
-  const text = body.candidates?.[0]?.content?.parts?.map((p) => p.text || '').join('') || '';
-  if (!text) throw new Error('Gemini returned an empty reply');
-  return text;
+  return { status: res.status, text: body.candidates?.[0]?.content?.parts?.map((p) => p.text || '').join('') || '', message: body.error?.message };
 }
 
-async function groq(system: string, user: string): Promise<string> {
+/** Tries each free Gemini model in turn; a busy (503) or rate-limited (429) model moves on to the next. */
+async function gemini(system: string, user: string, image?: ImagePart): Promise<string> {
+  if (!process.env.GEMINI_API_KEY) throw new Error('GEMINI_API_KEY is not set');
+  const errs: string[] = [];
+  for (const model of GEMINI_MODELS()) {
+    const r = await geminiOnce(model, system, user, image).catch((e) => ({ status: 0, message: e instanceof Error ? e.message : String(e) }) as { status: number; text?: string; message?: string });
+    if (r.status === 200 && r.text) return r.text;
+    errs.push(`${model} ${r.status}: ${r.message || 'empty reply'}`);
+    if (![0, 429, 500, 503, 404].includes(r.status)) break; // a bad request won't succeed on another model
+  }
+  throw new Error(`Gemini: ${errs.join('; ')}`);
+}
+
+async function groq(system: string, user: string, image?: ImagePart): Promise<string> {
+  if (image) throw new Error('Groq free tier has no image model');
   const key = process.env.GROQ_API_KEY;
   if (!key) throw new Error('GROQ_API_KEY is not set');
   const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
@@ -73,19 +86,17 @@ async function groq(system: string, user: string): Promise<string> {
  * Asks for JSON, validates it with `parse`, and falls back to the next free provider
  * on any failure (quota used up, timeout, invalid JSON, failed validation).
  */
-export async function generateJson<T>(system: string, user: string, parse: (raw: unknown) => T): Promise<AiResult<T>> {
+export async function generateJson<T>(system: string, user: string, parse: (raw: unknown) => T, image?: ImagePart): Promise<AiResult<T>> {
   const errors: string[] = [];
   for (const [provider, call] of [['gemini', gemini], ['groq', groq]] as const) {
     const t0 = Date.now();
     try {
-      const data = parse(extractJson(await call(system, user)));
-      lastErrors = errors;
-      return { data, provider, ms: Date.now() - t0, skipped: [...errors] } as AiResult<T>;
+      const data = parse(extractJson(await call(system, user, image)));
+      return { data, provider, ms: Date.now() - t0, skipped: [...errors] };
     } catch (e) {
       errors.push(e instanceof Error ? e.message : String(e));
     }
   }
-  lastErrors = errors;
   throw new Error(`No AI provider could answer (${errors.join(' | ')})`);
 }
 
