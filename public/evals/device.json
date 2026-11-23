@@ -1,0 +1,5467 @@
+{
+ "parser": "device",
+ "model": "Rule-based parser (runs in the browser, free)",
+ "ranAt": "2026-11-23T06:56:09.519Z",
+ "now": "2026-11-23T10:00:00+05:30",
+ "avgMsPerCase": 2.73,
+ "summary": {
+  "cases": 96,
+  "tasks": 106,
+  "caseAccuracy": 97.9,
+  "taskAccuracy": 98.1,
+  "fields": [
+   {
+    "field": "title",
+    "accuracy": 99.1
+   },
+   {
+    "field": "due",
+    "accuracy": 99.1
+   },
+   {
+    "field": "time",
+    "accuracy": 100
+   },
+   {
+    "field": "repeat",
+    "accuracy": 100
+   },
+   {
+    "field": "priority",
+    "accuracy": 100
+   }
+  ],
+  "groups": [
+   {
+    "group": "English",
+    "cases": 30,
+    "accuracy": 100
+   },
+   {
+    "group": "Times",
+    "cases": 10,
+    "accuracy": 100
+   },
+   {
+    "group": "Repeats",
+    "cases": 18,
+    "accuracy": 100
+   },
+   {
+    "group": "Hinglish",
+    "cases": 15,
+    "accuracy": 93.3
+   },
+   {
+    "group": "Several tasks",
+    "cases": 8,
+    "accuracy": 100
+   },
+   {
+    "group": "Priority",
+    "cases": 5,
+    "accuracy": 100
+   },
+   {
+    "group": "Tricky",
+    "cases": 10,
+    "accuracy": 90
+   }
+  ]
+ },
+ "routing": {
+  "threshold": 0.7,
+  "handledOnDevice": 93.8,
+  "accuracyWhenConfident": 100,
+  "sentToAi": 6,
+  "missedButConfident": []
+ },
+ "cases": [
+  {
+   "id": 1,
+   "group": "English",
+   "input": "buy milk",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Buy milk"
+     },
+     "got": {
+      "title": "Buy milk",
+      "due": null,
+      "time": null,
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Home",
+       "Errands"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 2,
+   "group": "English",
+   "input": "call the plumber tomorrow",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Call the plumber",
+      "due": "2026-11-24"
+     },
+     "got": {
+      "title": "Call the plumber",
+      "due": "2026-11-24",
+      "time": null,
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Home"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 3,
+   "group": "English",
+   "input": "pay the electricity bill before the 10th",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Pay the electricity bill",
+      "due": "2026-12-10"
+     },
+     "got": {
+      "title": "Pay the electricity bill",
+      "due": "2026-12-10",
+      "time": null,
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Bills"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 4,
+   "group": "English",
+   "input": "submit the report by friday",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Submit the report",
+      "due": "2026-11-27"
+     },
+     "got": {
+      "title": "Submit the report",
+      "due": "2026-11-27",
+      "time": null,
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Work"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 5,
+   "group": "English",
+   "input": "meeting with the client tomorrow at 5",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Meeting with the client",
+      "due": "2026-11-24",
+      "time": "17:00"
+     },
+     "got": {
+      "title": "Meeting with the client",
+      "due": "2026-11-24",
+      "time": "17:00",
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Work"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 6,
+   "group": "English",
+   "input": "dentist appointment on 3 dec at 11am",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Dentist appointment",
+      "due": "2026-12-03",
+      "time": "11:00"
+     },
+     "got": {
+      "title": "Dentist appointment",
+      "due": "2026-12-03",
+      "time": "11:00",
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Health"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 7,
+   "group": "English",
+   "input": "call papa tonight",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Call papa",
+      "due": "2026-11-23",
+      "time": "21:00"
+     },
+     "got": {
+      "title": "Call papa",
+      "due": "2026-11-23",
+      "time": "21:00",
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Family"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 8,
+   "group": "English",
+   "input": "pick up the dry cleaning this evening",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Pick up the dry cleaning",
+      "due": "2026-11-23",
+      "time": "18:00"
+     },
+     "got": {
+      "title": "Pick up the dry cleaning",
+      "due": "2026-11-23",
+      "time": "18:00",
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Errands"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 9,
+   "group": "English",
+   "input": "book the venue next week",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Book the venue",
+      "due": "2026-11-30"
+     },
+     "got": {
+      "title": "Book the venue",
+      "due": "2026-11-30",
+      "time": null,
+      "repeat": null,
+      "priority": "normal",
+      "tags": [],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 10,
+   "group": "English",
+   "input": "renew my passport next month",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Renew my passport",
+      "due": "2026-12-01"
+     },
+     "got": {
+      "title": "Renew my passport",
+      "due": "2026-12-01",
+      "time": null,
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Errands"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 11,
+   "group": "English",
+   "input": "send the invoice in 2 days",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Send the invoice",
+      "due": "2026-11-25"
+     },
+     "got": {
+      "title": "Send the invoice",
+      "due": "2026-11-25",
+      "time": null,
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Work"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 12,
+   "group": "English",
+   "input": "get a haircut on saturday",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Get a haircut",
+      "due": "2026-11-28"
+     },
+     "got": {
+      "title": "Get a haircut",
+      "due": "2026-11-28",
+      "time": null,
+      "repeat": null,
+      "priority": "normal",
+      "tags": [],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 13,
+   "group": "English",
+   "input": "order the birthday cake for sunday",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Order the birthday cake",
+      "due": "2026-11-29"
+     },
+     "got": {
+      "title": "Order the birthday cake",
+      "due": "2026-11-29",
+      "time": null,
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Errands"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 14,
+   "group": "English",
+   "input": "call the bank at 3:30 pm",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Call the bank",
+      "due": "2026-11-23",
+      "time": "15:30"
+     },
+     "got": {
+      "title": "Call the bank",
+      "due": "2026-11-23",
+      "time": "15:30",
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Errands"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 15,
+   "group": "English",
+   "input": "email the landlord at 9",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Email the landlord",
+      "due": "2026-11-24",
+      "time": "09:00"
+     },
+     "got": {
+      "title": "Email the landlord",
+      "due": "2026-11-24",
+      "time": "09:00",
+      "repeat": null,
+      "priority": "normal",
+      "tags": [],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 16,
+   "group": "English",
+   "input": "team standup on monday at 10",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Team standup",
+      "due": "2026-11-30",
+      "time": "10:00"
+     },
+     "got": {
+      "title": "Team standup",
+      "due": "2026-11-30",
+      "time": "10:00",
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Work"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 17,
+   "group": "English",
+   "input": "finish the presentation by end of month",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Finish the presentation",
+      "due": "2026-11-30"
+     },
+     "got": {
+      "title": "Finish the presentation",
+      "due": "2026-11-30",
+      "time": null,
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Work"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 18,
+   "group": "English",
+   "input": "buy a gift for riya's birthday on 2nd december",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Buy a gift for riya's birthday",
+      "due": "2026-12-02"
+     },
+     "got": {
+      "title": "Buy a gift for riya's birthday",
+      "due": "2026-12-02",
+      "time": null,
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Errands"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 19,
+   "group": "English",
+   "input": "check the car tyres this weekend",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Check the car tyres",
+      "due": "2026-11-28"
+     },
+     "got": {
+      "title": "Check the car tyres",
+      "due": "2026-11-28",
+      "time": null,
+      "repeat": null,
+      "priority": "normal",
+      "tags": [],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 20,
+   "group": "English",
+   "input": "visit nani day after tomorrow",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Visit nani",
+      "due": "2026-11-25"
+     },
+     "got": {
+      "title": "Visit nani",
+      "due": "2026-11-25",
+      "time": null,
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Family"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 21,
+   "group": "English",
+   "input": "remind me to drink water",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Drink water"
+     },
+     "got": {
+      "title": "Drink water",
+      "due": null,
+      "time": null,
+      "repeat": null,
+      "priority": "normal",
+      "tags": [],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 22,
+   "group": "English",
+   "input": "pay the credit card bill by the 15th",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Pay the credit card bill",
+      "due": "2026-12-15"
+     },
+     "got": {
+      "title": "Pay the credit card bill",
+      "due": "2026-12-15",
+      "time": null,
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Bills"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 23,
+   "group": "English",
+   "input": "collect the parcel from the post office tomorrow afternoon",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Collect the parcel from the post office",
+      "due": "2026-11-24",
+      "time": "14:00"
+     },
+     "got": {
+      "title": "Collect the parcel from the post office",
+      "due": "2026-11-24",
+      "time": "14:00",
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Work",
+       "Errands"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 24,
+   "group": "English",
+   "input": "wish rahul happy birthday on 30th november",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Wish rahul happy birthday",
+      "due": "2026-11-30"
+     },
+     "got": {
+      "title": "Wish rahul happy birthday",
+      "due": "2026-11-30",
+      "time": null,
+      "repeat": null,
+      "priority": "normal",
+      "tags": [],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 25,
+   "group": "English",
+   "input": "cancel the netflix subscription before 1st december",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Cancel the netflix subscription",
+      "due": "2026-12-01"
+     },
+     "got": {
+      "title": "Cancel the netflix subscription",
+      "due": "2026-12-01",
+      "time": null,
+      "repeat": null,
+      "priority": "normal",
+      "tags": [],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 26,
+   "group": "English",
+   "input": "renew gym membership on 1 jan",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Renew gym membership",
+      "due": "2027-01-01"
+     },
+     "got": {
+      "title": "Renew gym membership",
+      "due": "2027-01-01",
+      "time": null,
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Health"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 27,
+   "group": "English",
+   "input": "buy diwali sweets",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Buy diwali sweets"
+     },
+     "got": {
+      "title": "Buy diwali sweets",
+      "due": null,
+      "time": null,
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Errands"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 28,
+   "group": "English",
+   "input": "tomorrow i have to call the gas agency",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Call the gas agency",
+      "due": "2026-11-24"
+     },
+     "got": {
+      "title": "Call the gas agency",
+      "due": "2026-11-24",
+      "time": null,
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Bills"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 29,
+   "group": "English",
+   "input": "pay emi on 7th",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Pay emi",
+      "due": "2026-12-07"
+     },
+     "got": {
+      "title": "Pay emi",
+      "due": "2026-12-07",
+      "time": null,
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Bills"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 30,
+   "group": "English",
+   "input": "book doctor appointment for papa this friday at 10:30am",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Book doctor appointment for papa",
+      "due": "2026-11-27",
+      "time": "10:30"
+     },
+     "got": {
+      "title": "Book doctor appointment for papa",
+      "due": "2026-11-27",
+      "time": "10:30",
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Family",
+       "Health"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 31,
+   "group": "Times",
+   "input": "go for a run tomorrow morning",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Go for a run",
+      "due": "2026-11-24",
+      "time": "09:00"
+     },
+     "got": {
+      "title": "Go for a run",
+      "due": "2026-11-24",
+      "time": "09:00",
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Health"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 32,
+   "group": "Times",
+   "input": "call the electrician at 6",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Call the electrician",
+      "due": "2026-11-23",
+      "time": "18:00"
+     },
+     "got": {
+      "title": "Call the electrician",
+      "due": "2026-11-23",
+      "time": "18:00",
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Home"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 33,
+   "group": "Times",
+   "input": "doctor's appointment wednesday at 4:15pm",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Doctor's appointment",
+      "due": "2026-11-25",
+      "time": "16:15"
+     },
+     "got": {
+      "title": "Doctor's appointment",
+      "due": "2026-11-25",
+      "time": "16:15",
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Health"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 34,
+   "group": "Times",
+   "input": "take the dog to the vet saturday at noon",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Take the dog to the vet",
+      "due": "2026-11-28",
+      "time": "12:00"
+     },
+     "got": {
+      "title": "Take the dog to the vet",
+      "due": "2026-11-28",
+      "time": "12:00",
+      "repeat": null,
+      "priority": "normal",
+      "tags": [],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 35,
+   "group": "Times",
+   "input": "lunch with priya on thursday afternoon",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Lunch with priya",
+      "due": "2026-11-26",
+      "time": "14:00"
+     },
+     "got": {
+      "title": "Lunch with priya",
+      "due": "2026-11-26",
+      "time": "14:00",
+      "repeat": null,
+      "priority": "normal",
+      "tags": [],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 36,
+   "group": "Times",
+   "input": "watch the match sunday night",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Watch the match",
+      "due": "2026-11-29",
+      "time": "21:00"
+     },
+     "got": {
+      "title": "Watch the match",
+      "due": "2026-11-29",
+      "time": "21:00",
+      "repeat": null,
+      "priority": "normal",
+      "tags": [],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 37,
+   "group": "Times",
+   "input": "book a cab for 6am tomorrow",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Book a cab",
+      "due": "2026-11-24",
+      "time": "06:00"
+     },
+     "got": {
+      "title": "Book a cab",
+      "due": "2026-11-24",
+      "time": "06:00",
+      "repeat": null,
+      "priority": "normal",
+      "tags": [],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 38,
+   "group": "Times",
+   "input": "in the evening tomorrow call the carpenter",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Call the carpenter",
+      "due": "2026-11-24",
+      "time": "18:00"
+     },
+     "got": {
+      "title": "Call the carpenter",
+      "due": "2026-11-24",
+      "time": "18:00",
+      "repeat": null,
+      "priority": "normal",
+      "tags": [],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 39,
+   "group": "Times",
+   "input": "submit assignment before 11:59 tonight",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Submit assignment",
+      "due": "2026-11-23",
+      "time": "23:59"
+     },
+     "got": {
+      "title": "Submit assignment",
+      "due": "2026-11-23",
+      "time": "23:59",
+      "repeat": null,
+      "priority": "normal",
+      "tags": [],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 40,
+   "group": "Times",
+   "input": "schedule car service for next saturday morning",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Schedule car service",
+      "due": "2026-11-28",
+      "time": "09:00"
+     },
+     "got": {
+      "title": "Schedule car service",
+      "due": "2026-11-28",
+      "time": "09:00",
+      "repeat": null,
+      "priority": "normal",
+      "tags": [],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 41,
+   "group": "Repeats",
+   "input": "take medicine every night",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Take medicine",
+      "due": "2026-11-23",
+      "time": "21:00",
+      "repeat": "FREQ=DAILY"
+     },
+     "got": {
+      "title": "Take medicine",
+      "due": "2026-11-23",
+      "time": "21:00",
+      "repeat": "FREQ=DAILY",
+      "priority": "normal",
+      "tags": [
+       "Health"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 42,
+   "group": "Repeats",
+   "input": "gym every weekday at 7am",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Gym",
+      "due": "2026-11-24",
+      "time": "07:00",
+      "repeat": "FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR"
+     },
+     "got": {
+      "title": "Gym",
+      "due": "2026-11-24",
+      "time": "07:00",
+      "repeat": "FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR",
+      "priority": "normal",
+      "tags": [
+       "Health"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 43,
+   "group": "Repeats",
+   "input": "water the plants every other day",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Water the plants",
+      "due": "2026-11-23",
+      "repeat": "FREQ=DAILY;INTERVAL=2"
+     },
+     "got": {
+      "title": "Water the plants",
+      "due": "2026-11-23",
+      "time": null,
+      "repeat": "FREQ=DAILY;INTERVAL=2",
+      "priority": "normal",
+      "tags": [
+       "Home"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 44,
+   "group": "Repeats",
+   "input": "pay rent on the 5th of every month",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Pay rent",
+      "due": "2026-12-05",
+      "repeat": "FREQ=MONTHLY;BYMONTHDAY=5"
+     },
+     "got": {
+      "title": "Pay rent",
+      "due": "2026-12-05",
+      "time": null,
+      "repeat": "FREQ=MONTHLY;BYMONTHDAY=5",
+      "priority": "normal",
+      "tags": [
+       "Bills"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 45,
+   "group": "Repeats",
+   "input": "get the car washed every second saturday",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Get the car washed",
+      "due": "2026-12-12",
+      "repeat": "FREQ=MONTHLY;BYDAY=2SA"
+     },
+     "got": {
+      "title": "Get the car washed",
+      "due": "2026-12-12",
+      "time": null,
+      "repeat": "FREQ=MONTHLY;BYDAY=2SA",
+      "priority": "normal",
+      "tags": [],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 46,
+   "group": "Repeats",
+   "input": "yoga every monday and thursday at 6",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Yoga",
+      "due": "2026-11-23",
+      "time": "18:00",
+      "repeat": "FREQ=WEEKLY;BYDAY=MO,TH"
+     },
+     "got": {
+      "title": "Yoga",
+      "due": "2026-11-23",
+      "time": "18:00",
+      "repeat": "FREQ=WEEKLY;BYDAY=MO,TH",
+      "priority": "normal",
+      "tags": [
+       "Health"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 47,
+   "group": "Repeats",
+   "input": "call grandma every sunday",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Call grandma",
+      "due": "2026-11-29",
+      "repeat": "FREQ=WEEKLY;BYDAY=SU"
+     },
+     "got": {
+      "title": "Call grandma",
+      "due": "2026-11-29",
+      "time": null,
+      "repeat": "FREQ=WEEKLY;BYDAY=SU",
+      "priority": "normal",
+      "tags": [],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 48,
+   "group": "Repeats",
+   "input": "clean the fridge every month",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Clean the fridge",
+      "due": "2026-11-23",
+      "repeat": "FREQ=MONTHLY"
+     },
+     "got": {
+      "title": "Clean the fridge",
+      "due": "2026-11-23",
+      "time": null,
+      "repeat": "FREQ=MONTHLY",
+      "priority": "normal",
+      "tags": [
+       "Home"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 49,
+   "group": "Repeats",
+   "input": "backup the laptop every friday evening",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Backup the laptop",
+      "due": "2026-11-27",
+      "time": "18:00",
+      "repeat": "FREQ=WEEKLY;BYDAY=FR"
+     },
+     "got": {
+      "title": "Backup the laptop",
+      "due": "2026-11-27",
+      "time": "18:00",
+      "repeat": "FREQ=WEEKLY;BYDAY=FR",
+      "priority": "normal",
+      "tags": [],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 50,
+   "group": "Repeats",
+   "input": "pay the maid on the 1st of every month",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Pay the maid",
+      "due": "2026-12-01",
+      "repeat": "FREQ=MONTHLY;BYMONTHDAY=1"
+     },
+     "got": {
+      "title": "Pay the maid",
+      "due": "2026-12-01",
+      "time": null,
+      "repeat": "FREQ=MONTHLY;BYMONTHDAY=1",
+      "priority": "normal",
+      "tags": [
+       "Bills",
+       "Home"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 51,
+   "group": "Repeats",
+   "input": "change the bedsheets every weekend",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Change the bedsheets",
+      "due": "2026-11-28",
+      "repeat": "FREQ=WEEKLY;BYDAY=SA,SU"
+     },
+     "got": {
+      "title": "Change the bedsheets",
+      "due": "2026-11-28",
+      "time": null,
+      "repeat": "FREQ=WEEKLY;BYDAY=SA,SU",
+      "priority": "normal",
+      "tags": [],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 52,
+   "group": "Repeats",
+   "input": "review my budget every 2 weeks",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Review my budget",
+      "due": "2026-11-23",
+      "repeat": "FREQ=WEEKLY;INTERVAL=2"
+     },
+     "got": {
+      "title": "Review my budget",
+      "due": "2026-11-23",
+      "time": null,
+      "repeat": "FREQ=WEEKLY;INTERVAL=2",
+      "priority": "normal",
+      "tags": [],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 53,
+   "group": "Repeats",
+   "input": "evening walk every day at 7pm",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Evening walk",
+      "due": "2026-11-23",
+      "time": "19:00",
+      "repeat": "FREQ=DAILY"
+     },
+     "got": {
+      "title": "Walk",
+      "due": "2026-11-23",
+      "time": "19:00",
+      "repeat": "FREQ=DAILY",
+      "priority": "normal",
+      "tags": [
+       "Health"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 54,
+   "group": "Repeats",
+   "input": "standup every weekday at 10:30",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Standup",
+      "due": "2026-11-23",
+      "time": "10:30",
+      "repeat": "FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR"
+     },
+     "got": {
+      "title": "Standup",
+      "due": "2026-11-23",
+      "time": "10:30",
+      "repeat": "FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR",
+      "priority": "normal",
+      "tags": [
+       "Work"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 55,
+   "group": "Repeats",
+   "input": "pay the electricity bill every month before the 10th",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Pay the electricity bill",
+      "due": "2026-12-10",
+      "repeat": "FREQ=MONTHLY;BYMONTHDAY=10"
+     },
+     "got": {
+      "title": "Pay the electricity bill",
+      "due": "2026-12-10",
+      "time": null,
+      "repeat": "FREQ=MONTHLY;BYMONTHDAY=10",
+      "priority": "normal",
+      "tags": [
+       "Bills"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 56,
+   "group": "Repeats",
+   "input": "call mom every alternate sunday",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Call mom",
+      "due": "2026-11-29",
+      "repeat": "FREQ=WEEKLY;INTERVAL=2;BYDAY=SU"
+     },
+     "got": {
+      "title": "Call mom every",
+      "due": "2026-11-29",
+      "time": null,
+      "repeat": "FREQ=WEEKLY;INTERVAL=2;BYDAY=SU",
+      "priority": "normal",
+      "tags": [
+       "Family"
+      ],
+      "confidence": 0.57,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": false
+  },
+  {
+   "id": 57,
+   "group": "Repeats",
+   "input": "pay the newspaper bill every month on the 3rd",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Pay the newspaper bill",
+      "due": "2026-12-03",
+      "repeat": "FREQ=MONTHLY;BYMONTHDAY=3"
+     },
+     "got": {
+      "title": "Pay the newspaper bill",
+      "due": "2026-12-03",
+      "time": null,
+      "repeat": "FREQ=MONTHLY;BYMONTHDAY=3",
+      "priority": "normal",
+      "tags": [
+       "Bills"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 58,
+   "group": "Repeats",
+   "input": "send weekly report every friday at 5pm",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Send weekly report",
+      "due": "2026-11-27",
+      "time": "17:00",
+      "repeat": "FREQ=WEEKLY;BYDAY=FR"
+     },
+     "got": {
+      "title": "Send weekly report",
+      "due": "2026-11-27",
+      "time": "17:00",
+      "repeat": "FREQ=WEEKLY;BYDAY=FR",
+      "priority": "normal",
+      "tags": [
+       "Work"
+      ],
+      "confidence": 0.57,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": false
+  },
+  {
+   "id": 59,
+   "group": "Hinglish",
+   "input": "kal subah 8 baje doctor ke paas jana hai",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Doctor ke paas jana",
+      "due": "2026-11-24",
+      "time": "08:00"
+     },
+     "got": {
+      "title": "Doctor ke paas jana",
+      "due": "2026-11-24",
+      "time": "08:00",
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Health"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 60,
+   "group": "Hinglish",
+   "input": "mummy ko call karna sunday shaam ko",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Mummy ko call karna",
+      "due": "2026-11-29",
+      "time": "18:00"
+     },
+     "got": {
+      "title": "Mummy ko call karna",
+      "due": "2026-11-29",
+      "time": "18:00",
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Family"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 61,
+   "group": "Hinglish",
+   "input": "bijli ka bill bharna 10 tarikh se pehle",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Bijli ka bill bharna",
+      "due": "2026-12-10"
+     },
+     "got": {
+      "title": "Bijli ka bill bharna",
+      "due": "2026-12-10",
+      "time": null,
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Bills"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 62,
+   "group": "Hinglish",
+   "input": "parson bank jana hai",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Bank jana",
+      "due": "2026-11-25"
+     },
+     "got": {
+      "title": "Bank jana",
+      "due": "2026-11-25",
+      "time": null,
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Errands"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 63,
+   "group": "Hinglish",
+   "input": "har roz subah yoga karna",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Yoga karna",
+      "due": "2026-11-24",
+      "time": "09:00",
+      "repeat": "FREQ=DAILY"
+     },
+     "got": {
+      "title": "Yoga karna",
+      "due": "2026-11-24",
+      "time": "09:00",
+      "repeat": "FREQ=DAILY",
+      "priority": "normal",
+      "tags": [
+       "Health"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 64,
+   "group": "Hinglish",
+   "input": "aaj raat ko dawai leni hai",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Dawai leni",
+      "due": "2026-11-23",
+      "time": "21:00"
+     },
+     "got": {
+      "title": "Dawai leni",
+      "due": "2026-11-23",
+      "time": "21:00",
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Health"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 65,
+   "group": "Hinglish",
+   "input": "shaniwar ko gaadi dhulwani hai",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Gaadi dhulwani",
+      "due": "2026-11-28"
+     },
+     "got": {
+      "title": "Gaadi dhulwani",
+      "due": "2026-11-28",
+      "time": null,
+      "repeat": null,
+      "priority": "normal",
+      "tags": [],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 66,
+   "group": "Hinglish",
+   "input": "agle hafte passport office jana",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Passport office jana",
+      "due": "2026-11-30"
+     },
+     "got": {
+      "title": "Passport office jana",
+      "due": "2026-11-30",
+      "time": null,
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Work",
+       "Errands"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 67,
+   "group": "Hinglish",
+   "input": "har mahine 5 tarikh ko rent dena",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Rent dena",
+      "due": "2026-12-05",
+      "repeat": "FREQ=MONTHLY;BYMONTHDAY=5"
+     },
+     "got": {
+      "title": "Rent dena",
+      "due": "2026-12-05",
+      "time": null,
+      "repeat": "FREQ=MONTHLY;BYMONTHDAY=5",
+      "priority": "normal",
+      "tags": [
+       "Bills"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 68,
+   "group": "Hinglish",
+   "input": "doodh lana aur sabzi lana",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Doodh lana"
+     },
+     "got": {
+      "title": "Doodh lana",
+      "due": null,
+      "time": null,
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Home"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    },
+    {
+     "expected": {
+      "title": "Sabzi lana"
+     },
+     "got": {
+      "title": "Sabzi lana",
+      "due": null,
+      "time": null,
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Home"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 69,
+   "group": "Hinglish",
+   "input": "papa ko kal shaam 7 baje call karna",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Papa ko call karna",
+      "due": "2026-11-24",
+      "time": "19:00"
+     },
+     "got": {
+      "title": "Papa ko call karna",
+      "due": "2026-11-24",
+      "time": "19:00",
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Family"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 70,
+   "group": "Hinglish",
+   "input": "zaroori: insurance ka premium bharna friday tak",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Insurance ka premium bharna",
+      "due": "2026-11-27",
+      "priority": "high"
+     },
+     "got": {
+      "title": "Insurance ka premium bharna",
+      "due": "2026-11-27",
+      "time": null,
+      "repeat": null,
+      "priority": "high",
+      "tags": [
+       "Bills"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 71,
+   "group": "Hinglish",
+   "input": "somvar ko office mein report submit karni hai",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Office mein report submit karni",
+      "due": "2026-11-30"
+     },
+     "got": {
+      "title": "Office mein report submit karni",
+      "due": "2026-11-30",
+      "time": null,
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Work"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 72,
+   "group": "Hinglish",
+   "input": "har ravivar ko nani se baat karni hai",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Nani se baat karni",
+      "due": "2026-11-29",
+      "repeat": "FREQ=WEEKLY;BYDAY=SU"
+     },
+     "got": {
+      "title": "Nani se baat karni",
+      "due": "2026-11-29",
+      "time": null,
+      "repeat": "FREQ=WEEKLY;BYDAY=SU",
+      "priority": "normal",
+      "tags": [
+       "Family"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 73,
+   "group": "Hinglish",
+   "input": "मम्मी को कल फ़ोन करना",
+   "tasks": [
+    {
+     "expected": {
+      "title": "मम्मी को फ़ोन करना",
+      "due": "2026-11-24"
+     },
+     "got": {
+      "title": "मम्मी को कल फ़ोन करना",
+      "due": null,
+      "time": null,
+      "repeat": null,
+      "priority": "normal",
+      "tags": [],
+      "confidence": 0.3,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": false,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": false
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": false,
+   "confident": false
+  },
+  {
+   "id": 74,
+   "group": "Several tasks",
+   "input": "pay the electricity bill before the 10th, call mom sunday evening, and every second saturday get the car washed",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Pay the electricity bill",
+      "due": "2026-12-10"
+     },
+     "got": {
+      "title": "Pay the electricity bill",
+      "due": "2026-12-10",
+      "time": null,
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Bills"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    },
+    {
+     "expected": {
+      "title": "Call mom",
+      "due": "2026-11-29",
+      "time": "18:00"
+     },
+     "got": {
+      "title": "Call mom",
+      "due": "2026-11-29",
+      "time": "18:00",
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Family"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    },
+    {
+     "expected": {
+      "title": "Get the car washed",
+      "due": "2026-12-12",
+      "repeat": "FREQ=MONTHLY;BYDAY=2SA"
+     },
+     "got": {
+      "title": "Get the car washed",
+      "due": "2026-12-12",
+      "time": null,
+      "repeat": "FREQ=MONTHLY;BYDAY=2SA",
+      "priority": "normal",
+      "tags": [],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 75,
+   "group": "Several tasks",
+   "input": "buy milk and call the plumber",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Buy milk"
+     },
+     "got": {
+      "title": "Buy milk",
+      "due": null,
+      "time": null,
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Home",
+       "Errands"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    },
+    {
+     "expected": {
+      "title": "Call the plumber"
+     },
+     "got": {
+      "title": "Call the plumber",
+      "due": null,
+      "time": null,
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Home"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 76,
+   "group": "Several tasks",
+   "input": "remind me to buy milk, eggs and bread tomorrow morning",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Buy milk, eggs and bread",
+      "due": "2026-11-24",
+      "time": "09:00"
+     },
+     "got": {
+      "title": "Buy milk, eggs and bread",
+      "due": "2026-11-24",
+      "time": "09:00",
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Home",
+       "Errands"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 77,
+   "group": "Several tasks",
+   "input": "book flight tickets then email the hotel",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Book flight tickets"
+     },
+     "got": {
+      "title": "Book flight tickets",
+      "due": null,
+      "time": null,
+      "repeat": null,
+      "priority": "normal",
+      "tags": [],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    },
+    {
+     "expected": {
+      "title": "Email the hotel"
+     },
+     "got": {
+      "title": "Email the hotel",
+      "due": null,
+      "time": null,
+      "repeat": null,
+      "priority": "normal",
+      "tags": [],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 78,
+   "group": "Several tasks",
+   "input": "call dad tomorrow at 9 and pay the wifi bill on friday",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Call dad",
+      "due": "2026-11-24",
+      "time": "09:00"
+     },
+     "got": {
+      "title": "Call dad",
+      "due": "2026-11-24",
+      "time": "09:00",
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Family"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    },
+    {
+     "expected": {
+      "title": "Pay the wifi bill",
+      "due": "2026-11-27"
+     },
+     "got": {
+      "title": "Pay the wifi bill",
+      "due": "2026-11-27",
+      "time": null,
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Bills"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 79,
+   "group": "Several tasks",
+   "input": "clean the room. do laundry tomorrow",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Clean the room"
+     },
+     "got": {
+      "title": "Clean the room",
+      "due": null,
+      "time": null,
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Home"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    },
+    {
+     "expected": {
+      "title": "Do laundry",
+      "due": "2026-11-24"
+     },
+     "got": {
+      "title": "Do laundry",
+      "due": "2026-11-24",
+      "time": null,
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Home"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 80,
+   "group": "Several tasks",
+   "input": "get groceries, pick up the kids at 3 and cook dinner",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Get groceries"
+     },
+     "got": {
+      "title": "Get groceries",
+      "due": null,
+      "time": null,
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Home"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    },
+    {
+     "expected": {
+      "title": "Pick up the kids",
+      "due": "2026-11-23",
+      "time": "15:00"
+     },
+     "got": {
+      "title": "Pick up the kids",
+      "due": "2026-11-23",
+      "time": "15:00",
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Family",
+       "Errands"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    },
+    {
+     "expected": {
+      "title": "Cook dinner"
+     },
+     "got": {
+      "title": "Cook dinner",
+      "due": null,
+      "time": null,
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Home"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 81,
+   "group": "Several tasks",
+   "input": "mom ko call karna aur kal subah gym jana",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Mom ko call karna"
+     },
+     "got": {
+      "title": "Mom ko call karna",
+      "due": null,
+      "time": null,
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Family"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    },
+    {
+     "expected": {
+      "title": "Gym jana",
+      "due": "2026-11-24",
+      "time": "09:00"
+     },
+     "got": {
+      "title": "Gym jana",
+      "due": "2026-11-24",
+      "time": "09:00",
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Health"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 82,
+   "group": "Priority",
+   "input": "urgent: submit the tax documents today",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Submit the tax documents",
+      "due": "2026-11-23",
+      "priority": "high"
+     },
+     "got": {
+      "title": "Submit the tax documents",
+      "due": "2026-11-23",
+      "time": null,
+      "repeat": null,
+      "priority": "high",
+      "tags": [
+       "Bills"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 83,
+   "group": "Priority",
+   "input": "important call the lawyer tomorrow",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Call the lawyer",
+      "due": "2026-11-24",
+      "priority": "high"
+     },
+     "got": {
+      "title": "Call the lawyer",
+      "due": "2026-11-24",
+      "time": null,
+      "repeat": null,
+      "priority": "high",
+      "tags": [],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 84,
+   "group": "Priority",
+   "input": "fix the leaking tap sometime",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Fix the leaking tap",
+      "priority": "low"
+     },
+     "got": {
+      "title": "Fix the leaking tap",
+      "due": null,
+      "time": null,
+      "repeat": null,
+      "priority": "low",
+      "tags": [],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 85,
+   "group": "Priority",
+   "input": "read that book whenever",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Read that book",
+      "priority": "low"
+     },
+     "got": {
+      "title": "Read that book",
+      "due": null,
+      "time": null,
+      "repeat": null,
+      "priority": "low",
+      "tags": [],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 86,
+   "group": "Priority",
+   "input": "asap reply to the hr email",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Reply to the hr email",
+      "priority": "high"
+     },
+     "got": {
+      "title": "Reply to the hr email",
+      "due": null,
+      "time": null,
+      "repeat": null,
+      "priority": "high",
+      "tags": [],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 87,
+   "group": "Tricky",
+   "input": "after the meeting on thursday send the minutes to everyone",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Send the minutes to everyone",
+      "due": "2026-11-26"
+     },
+     "got": {
+      "title": "After the meeting send the minutes to everyone",
+      "due": "2026-11-26",
+      "time": null,
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Work"
+      ],
+      "confidence": 0.67,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": false
+  },
+  {
+   "id": 88,
+   "group": "Tricky",
+   "input": "the gas cylinder needs booking by thursday",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Book the gas cylinder",
+      "due": "2026-11-26"
+     },
+     "got": {
+      "title": "The gas cylinder needs booking",
+      "due": "2026-11-26",
+      "time": null,
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Bills",
+       "Home"
+      ],
+      "confidence": 0.62,
+      "question": null
+     },
+     "fields": {
+      "title": false,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": false
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": false,
+   "confident": false
+  },
+  {
+   "id": 89,
+   "group": "Tricky",
+   "input": "every 3rd thursday of the month society meeting at 7pm",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Society meeting",
+      "due": "2026-12-17",
+      "time": "19:00",
+      "repeat": "FREQ=MONTHLY;BYDAY=3TH"
+     },
+     "got": {
+      "title": "Society meeting",
+      "due": "2026-12-17",
+      "time": "19:00",
+      "repeat": "FREQ=MONTHLY;BYDAY=3TH",
+      "priority": "normal",
+      "tags": [
+       "Work"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 90,
+   "group": "Tricky",
+   "input": "pay school fees by the last day of the month",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Pay school fees",
+      "due": "2026-11-30"
+     },
+     "got": {
+      "title": "Pay school fees",
+      "due": "2026-11-30",
+      "time": null,
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Bills"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 91,
+   "group": "Tricky",
+   "input": "call aunty on her birthday 4th december morning",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Call aunty on her birthday",
+      "due": "2026-12-04",
+      "time": "09:00"
+     },
+     "got": {
+      "title": "Call aunty on her birthday",
+      "due": "2026-12-04",
+      "time": "09:00",
+      "repeat": null,
+      "priority": "normal",
+      "tags": [],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 92,
+   "group": "Tricky",
+   "input": "next to next monday client demo",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Client demo",
+      "due": "2026-12-07"
+     },
+     "got": {
+      "title": "Client demo",
+      "due": "2026-12-07",
+      "time": null,
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Work"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 93,
+   "group": "Tricky",
+   "input": "dentist at quarter past four on wednesday",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Dentist",
+      "due": "2026-11-25",
+      "time": "16:15"
+     },
+     "got": {
+      "title": "Dentist",
+      "due": "2026-11-25",
+      "time": "16:15",
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Health"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 94,
+   "group": "Tricky",
+   "input": "on the first monday of every month check the inverter battery",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Check the inverter battery",
+      "due": "2026-12-07",
+      "repeat": "FREQ=MONTHLY;BYDAY=1MO"
+     },
+     "got": {
+      "title": "Check the inverter battery",
+      "due": "2026-12-07",
+      "time": null,
+      "repeat": "FREQ=MONTHLY;BYDAY=1MO",
+      "priority": "normal",
+      "tags": [],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 95,
+   "group": "Tricky",
+   "input": "call the society office between 2 and 4 tomorrow",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Call the society office",
+      "due": "2026-11-24",
+      "time": "14:00"
+     },
+     "got": {
+      "title": "Call the society office",
+      "due": "2026-11-24",
+      "time": "14:00",
+      "repeat": null,
+      "priority": "normal",
+      "tags": [
+       "Work"
+      ],
+      "confidence": 0.92,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": true
+  },
+  {
+   "id": 96,
+   "group": "Tricky",
+   "input": "call ravi when i reach home",
+   "tasks": [
+    {
+     "expected": {
+      "title": "Call ravi when I reach home"
+     },
+     "got": {
+      "title": "Call ravi when i reach home",
+      "due": null,
+      "time": null,
+      "repeat": null,
+      "priority": "normal",
+      "tags": [],
+      "confidence": 0.67,
+      "question": null
+     },
+     "fields": {
+      "title": true,
+      "due": true,
+      "time": true,
+      "repeat": true,
+      "priority": true
+     },
+     "correct": true
+    }
+   ],
+   "extra": 0,
+   "countOk": true,
+   "correct": true,
+   "confident": false
+  }
+ ],
+ "heldout": {
+  "summary": {
+   "cases": 40,
+   "tasks": 42,
+   "caseAccuracy": 95,
+   "taskAccuracy": 92.9,
+   "fields": [
+    {
+     "field": "title",
+     "accuracy": 95.2
+    },
+    {
+     "field": "due",
+     "accuracy": 97.6
+    },
+    {
+     "field": "time",
+     "accuracy": 95.2
+    },
+    {
+     "field": "repeat",
+     "accuracy": 97.6
+    },
+    {
+     "field": "priority",
+     "accuracy": 97.6
+    }
+   ],
+   "groups": [
+    {
+     "group": "English",
+     "cases": 10,
+     "accuracy": 100
+    },
+    {
+     "group": "Times",
+     "cases": 9,
+     "accuracy": 100
+    },
+    {
+     "group": "Repeats",
+     "cases": 9,
+     "accuracy": 100
+    },
+    {
+     "group": "Hinglish",
+     "cases": 8,
+     "accuracy": 87.5
+    },
+    {
+     "group": "Several tasks",
+     "cases": 2,
+     "accuracy": 50
+    },
+    {
+     "group": "Priority",
+     "cases": 2,
+     "accuracy": 100
+    }
+   ]
+  },
+  "handledOnDevice": 100,
+  "accuracyWhenConfident": 95,
+  "cases": [
+   {
+    "id": 1001,
+    "group": "English",
+    "input": "call the insurance agent on friday at 11",
+    "tasks": [
+     {
+      "expected": {
+       "title": "Call the insurance agent",
+       "due": "2026-11-27",
+       "time": "11:00"
+      },
+      "got": {
+       "title": "Call the insurance agent",
+       "due": "2026-11-27",
+       "time": "11:00",
+       "repeat": null,
+       "priority": "normal",
+       "tags": [
+        "Bills"
+       ],
+       "confidence": 0.92,
+       "question": null
+      },
+      "fields": {
+       "title": true,
+       "due": true,
+       "time": true,
+       "repeat": true,
+       "priority": true
+      },
+      "correct": true
+     }
+    ],
+    "extra": 0,
+    "countOk": true,
+    "correct": true,
+    "confident": true
+   },
+   {
+    "id": 1002,
+    "group": "English",
+    "input": "pay the water bill tomorrow",
+    "tasks": [
+     {
+      "expected": {
+       "title": "Pay the water bill",
+       "due": "2026-11-24"
+      },
+      "got": {
+       "title": "Pay the water bill",
+       "due": "2026-11-24",
+       "time": null,
+       "repeat": null,
+       "priority": "normal",
+       "tags": [
+        "Bills"
+       ],
+       "confidence": 0.92,
+       "question": null
+      },
+      "fields": {
+       "title": true,
+       "due": true,
+       "time": true,
+       "repeat": true,
+       "priority": true
+      },
+      "correct": true
+     }
+    ],
+    "extra": 0,
+    "countOk": true,
+    "correct": true,
+    "confident": true
+   },
+   {
+    "id": 1003,
+    "group": "English",
+    "input": "buy a new charger",
+    "tasks": [
+     {
+      "expected": {
+       "title": "Buy a new charger"
+      },
+      "got": {
+       "title": "Buy a new charger",
+       "due": null,
+       "time": null,
+       "repeat": null,
+       "priority": "normal",
+       "tags": [
+        "Errands"
+       ],
+       "confidence": 0.92,
+       "question": null
+      },
+      "fields": {
+       "title": true,
+       "due": true,
+       "time": true,
+       "repeat": true,
+       "priority": true
+      },
+      "correct": true
+     }
+    ],
+    "extra": 0,
+    "countOk": true,
+    "correct": true,
+    "confident": true
+   },
+   {
+    "id": 1004,
+    "group": "Times",
+    "input": "meet sameer for coffee on wednesday evening",
+    "tasks": [
+     {
+      "expected": {
+       "title": "Meet sameer for coffee",
+       "due": "2026-11-25",
+       "time": "18:00"
+      },
+      "got": {
+       "title": "Meet sameer for coffee",
+       "due": "2026-11-25",
+       "time": "18:00",
+       "repeat": null,
+       "priority": "normal",
+       "tags": [],
+       "confidence": 0.92,
+       "question": null
+      },
+      "fields": {
+       "title": true,
+       "due": true,
+       "time": true,
+       "repeat": true,
+       "priority": true
+      },
+      "correct": true
+     }
+    ],
+    "extra": 0,
+    "countOk": true,
+    "correct": true,
+    "confident": true
+   },
+   {
+    "id": 1005,
+    "group": "English",
+    "input": "send the rent receipt to the tenant by the 2nd",
+    "tasks": [
+     {
+      "expected": {
+       "title": "Send the rent receipt to the tenant",
+       "due": "2026-12-02"
+      },
+      "got": {
+       "title": "Send the rent receipt to the tenant",
+       "due": "2026-12-02",
+       "time": null,
+       "repeat": null,
+       "priority": "normal",
+       "tags": [
+        "Bills"
+       ],
+       "confidence": 0.92,
+       "question": null
+      },
+      "fields": {
+       "title": true,
+       "due": true,
+       "time": true,
+       "repeat": true,
+       "priority": true
+      },
+      "correct": true
+     }
+    ],
+    "extra": 0,
+    "countOk": true,
+    "correct": true,
+    "confident": true
+   },
+   {
+    "id": 1006,
+    "group": "English",
+    "input": "renew the domain before 15 december",
+    "tasks": [
+     {
+      "expected": {
+       "title": "Renew the domain",
+       "due": "2026-12-15"
+      },
+      "got": {
+       "title": "Renew the domain",
+       "due": "2026-12-15",
+       "time": null,
+       "repeat": null,
+       "priority": "normal",
+       "tags": [],
+       "confidence": 0.92,
+       "question": null
+      },
+      "fields": {
+       "title": true,
+       "due": true,
+       "time": true,
+       "repeat": true,
+       "priority": true
+      },
+      "correct": true
+     }
+    ],
+    "extra": 0,
+    "countOk": true,
+    "correct": true,
+    "confident": true
+   },
+   {
+    "id": 1007,
+    "group": "Times",
+    "input": "remind me to call the cable guy at 4",
+    "tasks": [
+     {
+      "expected": {
+       "title": "Call the cable guy",
+       "due": "2026-11-23",
+       "time": "16:00"
+      },
+      "got": {
+       "title": "Call the cable guy",
+       "due": "2026-11-23",
+       "time": "16:00",
+       "repeat": null,
+       "priority": "normal",
+       "tags": [],
+       "confidence": 0.92,
+       "question": null
+      },
+      "fields": {
+       "title": true,
+       "due": true,
+       "time": true,
+       "repeat": true,
+       "priority": true
+      },
+      "correct": true
+     }
+    ],
+    "extra": 0,
+    "countOk": true,
+    "correct": true,
+    "confident": true
+   },
+   {
+    "id": 1008,
+    "group": "Times",
+    "input": "groceries on sunday morning",
+    "tasks": [
+     {
+      "expected": {
+       "title": "Groceries",
+       "due": "2026-11-29",
+       "time": "09:00"
+      },
+      "got": {
+       "title": "Groceries",
+       "due": "2026-11-29",
+       "time": "09:00",
+       "repeat": null,
+       "priority": "normal",
+       "tags": [
+        "Home"
+       ],
+       "confidence": 0.92,
+       "question": null
+      },
+      "fields": {
+       "title": true,
+       "due": true,
+       "time": true,
+       "repeat": true,
+       "priority": true
+      },
+      "correct": true
+     }
+    ],
+    "extra": 0,
+    "countOk": true,
+    "correct": true,
+    "confident": true
+   },
+   {
+    "id": 1009,
+    "group": "Repeats",
+    "input": "take vitamins every morning",
+    "tasks": [
+     {
+      "expected": {
+       "title": "Take vitamins",
+       "due": "2026-11-24",
+       "time": "09:00",
+       "repeat": "FREQ=DAILY"
+      },
+      "got": {
+       "title": "Take vitamins",
+       "due": "2026-11-24",
+       "time": "09:00",
+       "repeat": "FREQ=DAILY",
+       "priority": "normal",
+       "tags": [],
+       "confidence": 0.92,
+       "question": null
+      },
+      "fields": {
+       "title": true,
+       "due": true,
+       "time": true,
+       "repeat": true,
+       "priority": true
+      },
+      "correct": true
+     }
+    ],
+    "extra": 0,
+    "countOk": true,
+    "correct": true,
+    "confident": true
+   },
+   {
+    "id": 1010,
+    "group": "Repeats",
+    "input": "clean the balcony every saturday",
+    "tasks": [
+     {
+      "expected": {
+       "title": "Clean the balcony",
+       "due": "2026-11-28",
+       "repeat": "FREQ=WEEKLY;BYDAY=SA"
+      },
+      "got": {
+       "title": "Clean the balcony",
+       "due": "2026-11-28",
+       "time": null,
+       "repeat": "FREQ=WEEKLY;BYDAY=SA",
+       "priority": "normal",
+       "tags": [
+        "Home"
+       ],
+       "confidence": 0.92,
+       "question": null
+      },
+      "fields": {
+       "title": true,
+       "due": true,
+       "time": true,
+       "repeat": true,
+       "priority": true
+      },
+      "correct": true
+     }
+    ],
+    "extra": 0,
+    "countOk": true,
+    "correct": true,
+    "confident": true
+   },
+   {
+    "id": 1011,
+    "group": "Repeats",
+    "input": "check the property tax on the 20th of every month",
+    "tasks": [
+     {
+      "expected": {
+       "title": "Check the property tax",
+       "due": "2026-12-20",
+       "repeat": "FREQ=MONTHLY;BYMONTHDAY=20"
+      },
+      "got": {
+       "title": "Check the property tax",
+       "due": "2026-12-20",
+       "time": null,
+       "repeat": "FREQ=MONTHLY;BYMONTHDAY=20",
+       "priority": "normal",
+       "tags": [
+        "Bills"
+       ],
+       "confidence": 0.92,
+       "question": null
+      },
+      "fields": {
+       "title": true,
+       "due": true,
+       "time": true,
+       "repeat": true,
+       "priority": true
+      },
+      "correct": true
+     }
+    ],
+    "extra": 0,
+    "countOk": true,
+    "correct": true,
+    "confident": true
+   },
+   {
+    "id": 1012,
+    "group": "Repeats",
+    "input": "pay the society maintenance every month on 10th",
+    "tasks": [
+     {
+      "expected": {
+       "title": "Pay the society maintenance",
+       "due": "2026-12-10",
+       "repeat": "FREQ=MONTHLY;BYMONTHDAY=10"
+      },
+      "got": {
+       "title": "Pay the society maintenance",
+       "due": "2026-12-10",
+       "time": null,
+       "repeat": "FREQ=MONTHLY;BYMONTHDAY=10",
+       "priority": "normal",
+       "tags": [
+        "Bills"
+       ],
+       "confidence": 0.92,
+       "question": null
+      },
+      "fields": {
+       "title": true,
+       "due": true,
+       "time": true,
+       "repeat": true,
+       "priority": true
+      },
+      "correct": true
+     }
+    ],
+    "extra": 0,
+    "countOk": true,
+    "correct": true,
+    "confident": true
+   },
+   {
+    "id": 1013,
+    "group": "Repeats",
+    "input": "piano practice every tuesday and friday at 5",
+    "tasks": [
+     {
+      "expected": {
+       "title": "Piano practice",
+       "due": "2026-11-24",
+       "time": "17:00",
+       "repeat": "FREQ=WEEKLY;BYDAY=TU,FR"
+      },
+      "got": {
+       "title": "Piano practice",
+       "due": "2026-11-24",
+       "time": "17:00",
+       "repeat": "FREQ=WEEKLY;BYDAY=TU,FR",
+       "priority": "normal",
+       "tags": [],
+       "confidence": 0.92,
+       "question": null
+      },
+      "fields": {
+       "title": true,
+       "due": true,
+       "time": true,
+       "repeat": true,
+       "priority": true
+      },
+      "correct": true
+     }
+    ],
+    "extra": 0,
+    "countOk": true,
+    "correct": true,
+    "confident": true
+   },
+   {
+    "id": 1014,
+    "group": "Repeats",
+    "input": "run 5k every other saturday",
+    "tasks": [
+     {
+      "expected": {
+       "title": "Run 5k",
+       "due": "2026-11-28",
+       "repeat": "FREQ=WEEKLY;INTERVAL=2;BYDAY=SA"
+      },
+      "got": {
+       "title": "Run 5k",
+       "due": "2026-11-28",
+       "time": null,
+       "repeat": "FREQ=WEEKLY;INTERVAL=2;BYDAY=SA",
+       "priority": "normal",
+       "tags": [
+        "Health"
+       ],
+       "confidence": 0.82,
+       "question": null
+      },
+      "fields": {
+       "title": true,
+       "due": true,
+       "time": true,
+       "repeat": true,
+       "priority": true
+      },
+      "correct": true
+     }
+    ],
+    "extra": 0,
+    "countOk": true,
+    "correct": true,
+    "confident": true
+   },
+   {
+    "id": 1015,
+    "group": "Hinglish",
+    "input": "kal dopahar 2 baje meeting hai",
+    "tasks": [
+     {
+      "expected": {
+       "title": "Meeting",
+       "due": "2026-11-24",
+       "time": "14:00"
+      },
+      "got": {
+       "title": "Meeting",
+       "due": "2026-11-24",
+       "time": "14:00",
+       "repeat": null,
+       "priority": "normal",
+       "tags": [
+        "Work"
+       ],
+       "confidence": 0.92,
+       "question": null
+      },
+      "fields": {
+       "title": true,
+       "due": true,
+       "time": true,
+       "repeat": true,
+       "priority": true
+      },
+      "correct": true
+     }
+    ],
+    "extra": 0,
+    "countOk": true,
+    "correct": true,
+    "confident": true
+   },
+   {
+    "id": 1016,
+    "group": "Hinglish",
+    "input": "budhvar ko dhobi ko kapde dene hain",
+    "tasks": [
+     {
+      "expected": {
+       "title": "Dhobi ko kapde dene",
+       "due": "2026-11-25"
+      },
+      "got": {
+       "title": "Dhobi ko kapde dene hain",
+       "due": "2026-11-25",
+       "time": null,
+       "repeat": null,
+       "priority": "normal",
+       "tags": [],
+       "confidence": 0.92,
+       "question": null
+      },
+      "fields": {
+       "title": true,
+       "due": true,
+       "time": true,
+       "repeat": true,
+       "priority": true
+      },
+      "correct": true
+     }
+    ],
+    "extra": 0,
+    "countOk": true,
+    "correct": true,
+    "confident": true
+   },
+   {
+    "id": 1017,
+    "group": "Hinglish",
+    "input": "har shanivar ghar ki safai",
+    "tasks": [
+     {
+      "expected": {
+       "title": "Ghar ki safai",
+       "due": "2026-11-28",
+       "repeat": "FREQ=WEEKLY;BYDAY=SA"
+      },
+      "got": {
+       "title": "Ghar ki safai",
+       "due": "2026-11-28",
+       "time": null,
+       "repeat": "FREQ=WEEKLY;BYDAY=SA",
+       "priority": "normal",
+       "tags": [],
+       "confidence": 0.92,
+       "question": null
+      },
+      "fields": {
+       "title": true,
+       "due": true,
+       "time": true,
+       "repeat": true,
+       "priority": true
+      },
+      "correct": true
+     }
+    ],
+    "extra": 0,
+    "countOk": true,
+    "correct": true,
+    "confident": true
+   },
+   {
+    "id": 1018,
+    "group": "Hinglish",
+    "input": "aaj shaam ko sabzi lani hai",
+    "tasks": [
+     {
+      "expected": {
+       "title": "Sabzi lani",
+       "due": "2026-11-23",
+       "time": "18:00"
+      },
+      "got": {
+       "title": "Sabzi lani",
+       "due": "2026-11-23",
+       "time": "18:00",
+       "repeat": null,
+       "priority": "normal",
+       "tags": [
+        "Home"
+       ],
+       "confidence": 0.92,
+       "question": null
+      },
+      "fields": {
+       "title": true,
+       "due": true,
+       "time": true,
+       "repeat": true,
+       "priority": true
+      },
+      "correct": true
+     }
+    ],
+    "extra": 0,
+    "countOk": true,
+    "correct": true,
+    "confident": true
+   },
+   {
+    "id": 1019,
+    "group": "Hinglish",
+    "input": "agle mahine car service karwani hai",
+    "tasks": [
+     {
+      "expected": {
+       "title": "Car service karwani",
+       "due": "2026-12-01"
+      },
+      "got": {
+       "title": "Car service karwani",
+       "due": "2026-12-01",
+       "time": null,
+       "repeat": null,
+       "priority": "normal",
+       "tags": [],
+       "confidence": 0.92,
+       "question": null
+      },
+      "fields": {
+       "title": true,
+       "due": true,
+       "time": true,
+       "repeat": true,
+       "priority": true
+      },
+      "correct": true
+     }
+    ],
+    "extra": 0,
+    "countOk": true,
+    "correct": true,
+    "confident": true
+   },
+   {
+    "id": 1020,
+    "group": "Hinglish",
+    "input": "parson subah 10 baje bank jana",
+    "tasks": [
+     {
+      "expected": {
+       "title": "Bank jana",
+       "due": "2026-11-25",
+       "time": "10:00"
+      },
+      "got": {
+       "title": "Bank jana",
+       "due": "2026-11-25",
+       "time": "10:00",
+       "repeat": null,
+       "priority": "normal",
+       "tags": [
+        "Errands"
+       ],
+       "confidence": 0.92,
+       "question": null
+      },
+      "fields": {
+       "title": true,
+       "due": true,
+       "time": true,
+       "repeat": true,
+       "priority": true
+      },
+      "correct": true
+     }
+    ],
+    "extra": 0,
+    "countOk": true,
+    "correct": true,
+    "confident": true
+   },
+   {
+    "id": 1021,
+    "group": "Several tasks",
+    "input": "call nisha and book the movie tickets",
+    "tasks": [
+     {
+      "expected": {
+       "title": "Call nisha"
+      },
+      "got": {
+       "title": "Call nisha",
+       "due": null,
+       "time": null,
+       "repeat": null,
+       "priority": "normal",
+       "tags": [],
+       "confidence": 0.92,
+       "question": null
+      },
+      "fields": {
+       "title": true,
+       "due": true,
+       "time": true,
+       "repeat": true,
+       "priority": true
+      },
+      "correct": true
+     },
+     {
+      "expected": {
+       "title": "Book the movie tickets"
+      },
+      "got": {
+       "title": "Book the movie tickets",
+       "due": null,
+       "time": null,
+       "repeat": null,
+       "priority": "normal",
+       "tags": [],
+       "confidence": 0.92,
+       "question": null
+      },
+      "fields": {
+       "title": true,
+       "due": true,
+       "time": true,
+       "repeat": true,
+       "priority": true
+      },
+      "correct": true
+     }
+    ],
+    "extra": 0,
+    "countOk": true,
+    "correct": true,
+    "confident": true
+   },
+   {
+    "id": 1022,
+    "group": "Several tasks",
+    "input": "pay the gardener tomorrow and repot the money plant on sunday",
+    "tasks": [
+     {
+      "expected": {
+       "title": "Pay the gardener",
+       "due": "2026-11-24"
+      },
+      "got": {
+       "title": "Pay the gardener and repot the money plant",
+       "due": "2026-11-24",
+       "time": null,
+       "repeat": null,
+       "priority": "normal",
+       "tags": [
+        "Bills"
+       ],
+       "confidence": 0.72,
+       "question": null
+      },
+      "fields": {
+       "title": false,
+       "due": true,
+       "time": true,
+       "repeat": true,
+       "priority": true
+      },
+      "correct": false
+     },
+     {
+      "expected": {
+       "title": "Repot the money plant",
+       "due": "2026-11-29"
+      },
+      "got": null,
+      "fields": {
+       "title": false,
+       "due": false,
+       "time": false,
+       "repeat": false,
+       "priority": false
+      },
+      "correct": false
+     }
+    ],
+    "extra": 0,
+    "countOk": false,
+    "correct": false,
+    "confident": true
+   },
+   {
+    "id": 1023,
+    "group": "Priority",
+    "input": "urgent call the bank about the blocked card",
+    "tasks": [
+     {
+      "expected": {
+       "title": "Call the bank about the blocked card",
+       "priority": "high"
+      },
+      "got": {
+       "title": "Call the bank about the blocked card",
+       "due": null,
+       "time": null,
+       "repeat": null,
+       "priority": "high",
+       "tags": [
+        "Errands"
+       ],
+       "confidence": 0.92,
+       "question": null
+      },
+      "fields": {
+       "title": true,
+       "due": true,
+       "time": true,
+       "repeat": true,
+       "priority": true
+      },
+      "correct": true
+     }
+    ],
+    "extra": 0,
+    "countOk": true,
+    "correct": true,
+    "confident": true
+   },
+   {
+    "id": 1024,
+    "group": "Priority",
+    "input": "sometime next month clean out the garage",
+    "tasks": [
+     {
+      "expected": {
+       "title": "Clean out the garage",
+       "due": "2026-12-01",
+       "priority": "low"
+      },
+      "got": {
+       "title": "Clean out the garage",
+       "due": "2026-12-01",
+       "time": null,
+       "repeat": null,
+       "priority": "low",
+       "tags": [
+        "Home"
+       ],
+       "confidence": 0.92,
+       "question": null
+      },
+      "fields": {
+       "title": true,
+       "due": true,
+       "time": true,
+       "repeat": true,
+       "priority": true
+      },
+      "correct": true
+     }
+    ],
+    "extra": 0,
+    "countOk": true,
+    "correct": true,
+    "confident": true
+   },
+   {
+    "id": 1025,
+    "group": "Times",
+    "input": "submit expense report before friday 6pm",
+    "tasks": [
+     {
+      "expected": {
+       "title": "Submit expense report",
+       "due": "2026-11-27",
+       "time": "18:00"
+      },
+      "got": {
+       "title": "Submit expense report",
+       "due": "2026-11-27",
+       "time": "18:00",
+       "repeat": null,
+       "priority": "normal",
+       "tags": [
+        "Work"
+       ],
+       "confidence": 0.92,
+       "question": null
+      },
+      "fields": {
+       "title": true,
+       "due": true,
+       "time": true,
+       "repeat": true,
+       "priority": true
+      },
+      "correct": true
+     }
+    ],
+    "extra": 0,
+    "countOk": true,
+    "correct": true,
+    "confident": true
+   },
+   {
+    "id": 1026,
+    "group": "English",
+    "input": "book train tickets to jaipur by 1st december",
+    "tasks": [
+     {
+      "expected": {
+       "title": "Book train tickets to jaipur",
+       "due": "2026-12-01"
+      },
+      "got": {
+       "title": "Book train tickets to jaipur",
+       "due": "2026-12-01",
+       "time": null,
+       "repeat": null,
+       "priority": "normal",
+       "tags": [],
+       "confidence": 0.92,
+       "question": null
+      },
+      "fields": {
+       "title": true,
+       "due": true,
+       "time": true,
+       "repeat": true,
+       "priority": true
+      },
+      "correct": true
+     }
+    ],
+    "extra": 0,
+    "countOk": true,
+    "correct": true,
+    "confident": true
+   },
+   {
+    "id": 1027,
+    "group": "Times",
+    "input": "doctor checkup for mom on 5th dec at 10am",
+    "tasks": [
+     {
+      "expected": {
+       "title": "Doctor checkup for mom",
+       "due": "2026-12-05",
+       "time": "10:00"
+      },
+      "got": {
+       "title": "Doctor checkup for mom",
+       "due": "2026-12-05",
+       "time": "10:00",
+       "repeat": null,
+       "priority": "normal",
+       "tags": [
+        "Family",
+        "Health"
+       ],
+       "confidence": 0.92,
+       "question": null
+      },
+      "fields": {
+       "title": true,
+       "due": true,
+       "time": true,
+       "repeat": true,
+       "priority": true
+      },
+      "correct": true
+     }
+    ],
+    "extra": 0,
+    "countOk": true,
+    "correct": true,
+    "confident": true
+   },
+   {
+    "id": 1028,
+    "group": "Times",
+    "input": "call the school at half past nine tomorrow",
+    "tasks": [
+     {
+      "expected": {
+       "title": "Call the school",
+       "due": "2026-11-24",
+       "time": "09:30"
+      },
+      "got": {
+       "title": "Call the school",
+       "due": "2026-11-24",
+       "time": "09:30",
+       "repeat": null,
+       "priority": "normal",
+       "tags": [],
+       "confidence": 0.92,
+       "question": null
+      },
+      "fields": {
+       "title": true,
+       "due": true,
+       "time": true,
+       "repeat": true,
+       "priority": true
+      },
+      "correct": true
+     }
+    ],
+    "extra": 0,
+    "countOk": true,
+    "correct": true,
+    "confident": true
+   },
+   {
+    "id": 1029,
+    "group": "English",
+    "input": "file gst return by the 20th",
+    "tasks": [
+     {
+      "expected": {
+       "title": "File gst return",
+       "due": "2026-12-20"
+      },
+      "got": {
+       "title": "File gst return",
+       "due": "2026-12-20",
+       "time": null,
+       "repeat": null,
+       "priority": "normal",
+       "tags": [
+        "Errands"
+       ],
+       "confidence": 0.92,
+       "question": null
+      },
+      "fields": {
+       "title": true,
+       "due": true,
+       "time": true,
+       "repeat": true,
+       "priority": true
+      },
+      "correct": true
+     }
+    ],
+    "extra": 0,
+    "countOk": true,
+    "correct": true,
+    "confident": true
+   },
+   {
+    "id": 1030,
+    "group": "Repeats",
+    "input": "water the garden every evening",
+    "tasks": [
+     {
+      "expected": {
+       "title": "Water the garden",
+       "due": "2026-11-23",
+       "time": "18:00",
+       "repeat": "FREQ=DAILY"
+      },
+      "got": {
+       "title": "Water the garden",
+       "due": "2026-11-23",
+       "time": "18:00",
+       "repeat": "FREQ=DAILY",
+       "priority": "normal",
+       "tags": [],
+       "confidence": 0.92,
+       "question": null
+      },
+      "fields": {
+       "title": true,
+       "due": true,
+       "time": true,
+       "repeat": true,
+       "priority": true
+      },
+      "correct": true
+     }
+    ],
+    "extra": 0,
+    "countOk": true,
+    "correct": true,
+    "confident": true
+   },
+   {
+    "id": 1031,
+    "group": "English",
+    "input": "lock the car",
+    "tasks": [
+     {
+      "expected": {
+       "title": "Lock the car"
+      },
+      "got": {
+       "title": "Lock the car",
+       "due": null,
+       "time": null,
+       "repeat": null,
+       "priority": "normal",
+       "tags": [],
+       "confidence": 0.92,
+       "question": null
+      },
+      "fields": {
+       "title": true,
+       "due": true,
+       "time": true,
+       "repeat": true,
+       "priority": true
+      },
+      "correct": true
+     }
+    ],
+    "extra": 0,
+    "countOk": true,
+    "correct": true,
+    "confident": true
+   },
+   {
+    "id": 1032,
+    "group": "Times",
+    "input": "remember to switch off the geyser tonight",
+    "tasks": [
+     {
+      "expected": {
+       "title": "Switch off the geyser",
+       "due": "2026-11-23",
+       "time": "21:00"
+      },
+      "got": {
+       "title": "Switch off the geyser",
+       "due": "2026-11-23",
+       "time": "21:00",
+       "repeat": null,
+       "priority": "normal",
+       "tags": [],
+       "confidence": 0.92,
+       "question": null
+      },
+      "fields": {
+       "title": true,
+       "due": true,
+       "time": true,
+       "repeat": true,
+       "priority": true
+      },
+      "correct": true
+     }
+    ],
+    "extra": 0,
+    "countOk": true,
+    "correct": true,
+    "confident": true
+   },
+   {
+    "id": 1033,
+    "group": "Repeats",
+    "input": "on the last friday of every month send the team update",
+    "tasks": [
+     {
+      "expected": {
+       "title": "Send the team update",
+       "due": "2026-11-27",
+       "repeat": "FREQ=MONTHLY;BYDAY=-1FR"
+      },
+      "got": {
+       "title": "Send the team update",
+       "due": "2026-11-27",
+       "time": null,
+       "repeat": "FREQ=MONTHLY;BYDAY=-1FR",
+       "priority": "normal",
+       "tags": [],
+       "confidence": 0.92,
+       "question": null
+      },
+      "fields": {
+       "title": true,
+       "due": true,
+       "time": true,
+       "repeat": true,
+       "priority": true
+      },
+      "correct": true
+     }
+    ],
+    "extra": 0,
+    "countOk": true,
+    "correct": true,
+    "confident": true
+   },
+   {
+    "id": 1034,
+    "group": "English",
+    "input": "call grandpa on his birthday on 9 december",
+    "tasks": [
+     {
+      "expected": {
+       "title": "Call grandpa on his birthday",
+       "due": "2026-12-09"
+      },
+      "got": {
+       "title": "Call grandpa on his birthday",
+       "due": "2026-12-09",
+       "time": null,
+       "repeat": null,
+       "priority": "normal",
+       "tags": [],
+       "confidence": 0.92,
+       "question": null
+      },
+      "fields": {
+       "title": true,
+       "due": true,
+       "time": true,
+       "repeat": true,
+       "priority": true
+      },
+      "correct": true
+     }
+    ],
+    "extra": 0,
+    "countOk": true,
+    "correct": true,
+    "confident": true
+   },
+   {
+    "id": 1035,
+    "group": "Times",
+    "input": "buy flowers for the puja on thursday morning",
+    "tasks": [
+     {
+      "expected": {
+       "title": "Buy flowers for the puja",
+       "due": "2026-11-26",
+       "time": "09:00"
+      },
+      "got": {
+       "title": "Buy flowers for the puja",
+       "due": "2026-11-26",
+       "time": "09:00",
+       "repeat": null,
+       "priority": "normal",
+       "tags": [
+        "Errands"
+       ],
+       "confidence": 0.92,
+       "question": null
+      },
+      "fields": {
+       "title": true,
+       "due": true,
+       "time": true,
+       "repeat": true,
+       "priority": true
+      },
+      "correct": true
+     }
+    ],
+    "extra": 0,
+    "countOk": true,
+    "correct": true,
+    "confident": true
+   },
+   {
+    "id": 1036,
+    "group": "Hinglish",
+    "input": "mujhe kal yaad dilana ki electrician ko bulana hai",
+    "tasks": [
+     {
+      "expected": {
+       "title": "Electrician ko bulana",
+       "due": "2026-11-24"
+      },
+      "got": {
+       "title": "Yaad dilana ki electrician ko bulana",
+       "due": "2026-11-24",
+       "time": null,
+       "repeat": null,
+       "priority": "normal",
+       "tags": [
+        "Home"
+       ],
+       "confidence": 0.92,
+       "question": null
+      },
+      "fields": {
+       "title": true,
+       "due": true,
+       "time": true,
+       "repeat": true,
+       "priority": true
+      },
+      "correct": true
+     }
+    ],
+    "extra": 0,
+    "countOk": true,
+    "correct": true,
+    "confident": true
+   },
+   {
+    "id": 1037,
+    "group": "English",
+    "input": "pay the internet bill and the phone bill by the 5th",
+    "tasks": [
+     {
+      "expected": {
+       "title": "Pay the internet bill and the phone bill",
+       "due": "2026-12-05"
+      },
+      "got": {
+       "title": "Pay the internet bill and the phone bill",
+       "due": "2026-12-05",
+       "time": null,
+       "repeat": null,
+       "priority": "normal",
+       "tags": [
+        "Bills"
+       ],
+       "confidence": 0.72,
+       "question": null
+      },
+      "fields": {
+       "title": true,
+       "due": true,
+       "time": true,
+       "repeat": true,
+       "priority": true
+      },
+      "correct": true
+     }
+    ],
+    "extra": 0,
+    "countOk": true,
+    "correct": true,
+    "confident": true
+   },
+   {
+    "id": 1038,
+    "group": "Repeats",
+    "input": "check emails at 8 every morning",
+    "tasks": [
+     {
+      "expected": {
+       "title": "Check emails",
+       "due": "2026-11-24",
+       "time": "08:00",
+       "repeat": "FREQ=DAILY"
+      },
+      "got": {
+       "title": "Check emails",
+       "due": "2026-11-24",
+       "time": "08:00",
+       "repeat": "FREQ=DAILY",
+       "priority": "normal",
+       "tags": [],
+       "confidence": 0.92,
+       "question": null
+      },
+      "fields": {
+       "title": true,
+       "due": true,
+       "time": true,
+       "repeat": true,
+       "priority": true
+      },
+      "correct": true
+     }
+    ],
+    "extra": 0,
+    "countOk": true,
+    "correct": true,
+    "confident": true
+   },
+   {
+    "id": 1039,
+    "group": "Times",
+    "input": "dinner reservation for saturday 8:30pm",
+    "tasks": [
+     {
+      "expected": {
+       "title": "Dinner reservation",
+       "due": "2026-11-28",
+       "time": "20:30"
+      },
+      "got": {
+       "title": "Dinner reservation",
+       "due": "2026-11-28",
+       "time": "20:30",
+       "repeat": null,
+       "priority": "normal",
+       "tags": [],
+       "confidence": 0.92,
+       "question": null
+      },
+      "fields": {
+       "title": true,
+       "due": true,
+       "time": true,
+       "repeat": true,
+       "priority": true
+      },
+      "correct": true
+     }
+    ],
+    "extra": 0,
+    "countOk": true,
+    "correct": true,
+    "confident": true
+   },
+   {
+    "id": 1040,
+    "group": "Hinglish",
+    "input": "kal se roz 6 baje uthna",
+    "tasks": [
+     {
+      "expected": {
+       "title": "Uthna",
+       "due": "2026-11-24",
+       "time": "06:00",
+       "repeat": "FREQ=DAILY"
+      },
+      "got": {
+       "title": "Uthna",
+       "due": "2026-11-24",
+       "time": "18:00",
+       "repeat": "FREQ=DAILY",
+       "priority": "normal",
+       "tags": [],
+       "confidence": 0.92,
+       "question": null
+      },
+      "fields": {
+       "title": true,
+       "due": true,
+       "time": false,
+       "repeat": true,
+       "priority": true
+      },
+      "correct": false
+     }
+    ],
+    "extra": 0,
+    "countOk": true,
+    "correct": false,
+    "confident": true
+   }
+  ]
+ }
+}
