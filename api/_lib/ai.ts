@@ -5,7 +5,8 @@
 declare const process: { env: Record<string, string | undefined> };
 
 export type Provider = 'gemini' | 'groq';
-export interface AiResult<T> { data: T; provider: Provider; ms: number }
+export interface AiResult<T> { data: T; provider: Provider; ms: number; skipped?: string[] }
+export let lastErrors: string[] = [];
 
 const GEMINI_MODEL = () => process.env.GEMINI_MODEL || 'gemini-flash-latest';
 const GROQ_MODEL = () => process.env.GROQ_MODEL || 'openai/gpt-oss-120b';
@@ -78,11 +79,13 @@ export async function generateJson<T>(system: string, user: string, parse: (raw:
     const t0 = Date.now();
     try {
       const data = parse(extractJson(await call(system, user)));
-      return { data, provider, ms: Date.now() - t0 };
+      lastErrors = errors;
+      return { data, provider, ms: Date.now() - t0, skipped: [...errors] } as AiResult<T>;
     } catch (e) {
       errors.push(e instanceof Error ? e.message : String(e));
     }
   }
+  lastErrors = errors;
   throw new Error(`No AI provider could answer (${errors.join(' | ')})`);
 }
 
