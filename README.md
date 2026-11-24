@@ -2,7 +2,9 @@
 
 **Say your to-dos the way you'd tell a friend, in English, Hindi or Hinglish.** SayDo turns "pay the electricity bill before the 10th, call mom Sunday evening, and every second Saturday get the car washed" into three tasks with the right dates, times and repeat rules.
 
-Live: _add the Vercel link here_ · How well it works: _link_/#how-it-works
+Live: **[saydo-psi.vercel.app](https://saydo-psi.vercel.app)** · How well it works: [test results](https://saydo-psi.vercel.app/#how-it-works)
+
+[![One sentence in, three tasks out, with dates, times and repeats highlighted](docs/screenshot.jpg)](https://saydo-psi.vercel.app)
 
 ## What it does
 
@@ -44,7 +46,7 @@ The unseen set is the honest number. Its two misses are real gaps: "repot" isn't
 ```bash
 npm run eval          # on-device parser, both sets → public/evals/device.json
 npm run eval:fails    # list every miss
-npm run eval:ai -- https://your-app.vercel.app   # AI parser via the deployed API → public/evals/ai.json
+npm run eval:ai -- https://saydo-psi.vercel.app  # AI parser via the deployed API → public/evals/ai.json
 ```
 
 ## Run it
